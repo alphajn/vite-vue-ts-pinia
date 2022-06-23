@@ -1,0 +1,9 @@
+dist/*
+*.ts
+*.js
+*.jsx
+*.tsx
+*.jpg
+*.woff
+*.md
+index.html

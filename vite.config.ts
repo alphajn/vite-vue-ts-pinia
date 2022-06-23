@@ -1,0 +1,40 @@
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import AutoImport from 'unplugin-auto-import/vite'; // eslint-disable-line
+import ViteComponents from 'unplugin-vue-components/vite'; // eslint-disable-line
+import * as path from 'path';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+    plugins: [
+        vue(),
+        AutoImport({
+            include: [
+                /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+                /\.vue$/, /\.vue\?vue/, // .vue
+                /\.md$/, // .md
+            ],
+            imports: ['vue', 'vue-router', 'vue-i18n', 'pinia'],
+            dts: 'src/auto-import.d.ts', // 可以选择auto-import.d.ts生成的位置（默认根目录），建议设置为'src/auto-import.d.ts'
+            eslintrc: {
+                enabled: true,
+                filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+            },
+        }),
+        ViteComponents({
+            directoryAsNamespace: true,
+            // // 配置文件生成位置
+            dts: 'src/components.d.ts',
+        }),
+    ],
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            '@c': path.resolve(__dirname, 'src/components'),
+        },
+    },
+    server: {
+        host: '0.0.0.0',
+        open: '/',
+    },
+});

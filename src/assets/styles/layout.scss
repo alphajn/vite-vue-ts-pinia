@@ -1,0 +1,98 @@
+/**
+ * @file 常用通用样式 flex 布局
+ * @date 2022-06-23
+ */
+
+[class*="flex-row"] {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+[class*="flex-col"] {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.flex {
+    // align-items 布局
+    @each $key in flex-start, flex-end, center, baseline, stretch {
+        // 交叉轴对齐方式单行文本
+        &-items-#{$key} {
+            align-items: #{$key};
+        }
+
+        // 单个属性对齐方式
+        &-self-#{$key} {
+            align-self: #{$key};
+        }
+    }
+
+    @each $key in flex-start, flex-end, center, space-between, space-around {
+        &-row-#{$key},
+        &-col-#{$key} {
+            justify-content: #{$key};
+        }
+
+        // 多根交叉轴的对齐方式，一根轴线不起作用
+        &-content-#{$key} {
+            align-content: #{$key};
+        }
+    }
+
+    @each $key in nowrap, wrap, wrap-reverse {
+        &-#{$key} {
+            flex-wrap: #{$key};
+        }
+    }
+
+    &-1 {
+        flex: 1; // flex:<number> 1 0
+    }
+
+    &-shrink-0 {
+        flex-shrink: 0;
+    }
+}
+
+// vertical align
+@each $key in top, middle, bottom {
+    .vertical-align-#{$key} {
+        vertical-align: #{$key};
+    }
+}
+
+// text align
+@each $key in left, center, right {
+    .text-align-#{$key} {
+        text-align: #{$key};
+    }
+}
+
+// text align
+@each $key in default, pointer, not-allowed {
+    .cursor-#{$key} {
+        cursor: #{$key};
+    }
+}
+
+// 超出多少行隐藏显示...
+@each $key in 1, 2, 3 {
+    .text-ellipsis-#{$key} {
+        display: -webkit-box; // stylelint-disable-line
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: #{$key};
+        -webkit-box-orient: vertical;
+    }
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+// 超出隐藏...
+.text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 14px/1 IBM, "Microsoft YaHei", Arial, sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: grayscale; // stylelint-disable-line
+    background-color: var(--main-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-weight: normal; }
+
+table,
+input,
+button,
+textarea {
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    appearance: none;
+}
+
+ul,
+ol,
+li { list-style: none outside none; }
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--main-color);
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+        color: var(--hover-color);
+    }
+}
+
+img {
+    border: 0;
+
+    &[src=""] {
+        opacity: 0;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+// 修改滚动条样式
+::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+// 修改火狐滚动条样式
+// stylelint-disable-next-line
+@-moz-document url-prefix() {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    }
+}
