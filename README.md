@@ -8,15 +8,15 @@ pnpm i
 
 ## 工程配置
 
-- [editorconfig 统一编辑器代码风格配置](.editorconfig配置)
-- [代码提交规范 husky+lint-staged](代码提交规范)
-- [eslint](eslint)
-- [stylelint](stylelint)
-- [自动导入](自动导入)
-- [vue-i18n 国际化](vue-i18n)
-- [vue-roter 路由](vue-roter)
-- [pinia 状态管理](pinia)
-- [axios 请求](axios)
+- [editorconfig 统一编辑器代码风格配置](#.editorconfig配置)
+- [代码提交规范 husky+lint-staged](#代码提交规范)
+- [eslint](#eslint)
+- [stylelint](#stylelint)
+- [自动导入](#自动导入)
+- [vue-i18n 国际化](#vue-i18n)
+- [vue-roter 路由](#vue-roter)
+- [pinia 状态管理](#pinia)
+- [axios 请求](#axios)
 
 ### .editorconfig配置
 
