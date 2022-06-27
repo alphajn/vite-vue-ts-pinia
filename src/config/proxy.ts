@@ -4,18 +4,18 @@
  * @type {Object}
  */
 
-export type TypeParams = {
+export type ParamsType = {
     url: string,
     headers?: <T>(x: T) => T | { [key: string]: string | number }
     params?: <T>(x: T) => T | { [key: string]: string | number }
     responseHandle?: <T>(x: T) => T
 }
 
-type TypeObject = {
-    [key: string]: TypeParams
+interface ApiInterface {
+    [key: string]: ParamsType
 }
 
-const apis: TypeObject = {
+const apis: ApiInterface = {
     '@api/': {
         url: 'demo.com',
     },

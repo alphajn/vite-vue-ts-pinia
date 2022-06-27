@@ -1,13 +1,13 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import proxy, { TypeParams } from '@/config/proxy';
+import proxy, { ParamsType } from '@/config/proxy';
 
 const Axios = axios.create({
     timeout: 30000, // 30秒
     // withCredentials: true, // `withCredentials` 表示跨域请求时是否需要使用凭证
 });
 
-const matchConfig = (config: AxiosRequestConfig): TypeParams => {
-    const cache: TypeParams = {
+const matchConfig = (config: AxiosRequestConfig): ParamsType => {
+    const cache: ParamsType = {
         url: config.url || '',
     };
 
@@ -35,7 +35,7 @@ const matchConfig = (config: AxiosRequestConfig): TypeParams => {
     return cache;
 };
 
-type TypeRequestHandle = { responseHandle?: TypeParams['responseHandle'] } & AxiosRequestConfig;
+type TypeRequestHandle = { responseHandle?: ParamsType['responseHandle'] } & AxiosRequestConfig;
 
 /**
  * 请求参数处理
