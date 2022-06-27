@@ -6,8 +6,8 @@
 
 export type TypeParams = {
     url: string,
-    headers?: <T>(x: T) => T | { [key: string]: any }
-    params?: <T>(x: T) => T | { [key: string]: any }
+    headers?: <T>(x: T) => T | { [key: string]: string | number }
+    params?: <T>(x: T) => T | { [key: string]: string | number }
     responseHandle?: <T>(x: T) => T
 }
 
