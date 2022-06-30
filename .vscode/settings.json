@@ -9,5 +9,8 @@
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
-  }
+  },
+  "i18n-ally.localesPaths": [
+    "src/lang"
+  ]
 }

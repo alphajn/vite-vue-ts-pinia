@@ -48,6 +48,9 @@
       "pnpm lint"
     ]
   },
+  "author": "alpha.wu",
+  "license": "MIT",
+  "npmClient": "pnpm",
   "engines": {
     "node": ">=v16.2.0",
     "pnpm": ">=7.3.0"
