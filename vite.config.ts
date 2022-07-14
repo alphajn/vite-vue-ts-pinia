@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite'; // eslint-disable-line
-import ViteComponents from 'unplugin-vue-components/vite'; // eslint-disable-line
+import VueComponents from 'unplugin-vue-components/vite'; // eslint-disable-line
 import * as path from 'path';
 
 // https://vitejs.dev/config/
@@ -21,7 +21,7 @@ export default defineConfig({
                 filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
             },
         }),
-        ViteComponents({
+        VueComponents({
             directoryAsNamespace: true,
             // // 配置文件生成位置
             dts: 'src/components.d.ts',
@@ -33,8 +33,21 @@ export default defineConfig({
             '@c': path.resolve(__dirname, 'src/components'),
         },
     },
+    build: {
+        minify: 'terser',
+    },
+    css: {
+        postcss: {
+            plugins: [
+                // eslint-disable-next-line
+                require('autoprefixer'),
+            ],
+        },
+    },
     server: {
-        host: '0.0.0.0',
+        hmr: {
+            host: '0.0.0.0',
+        },
         open: '/',
     },
 });

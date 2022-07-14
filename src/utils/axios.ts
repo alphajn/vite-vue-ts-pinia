@@ -1,5 +1,7 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import proxy, { ParamsType } from '@/config/proxy';
+import axios from 'axios';
+import type { AxiosRequestConfig, AxiosResponse } from 'axios';
+import proxy from '@/config/proxy';
+import type { ParamsType } from '@/config/proxy';
 
 const Axios = axios.create({
     timeout: 30000, // 30秒

@@ -2,7 +2,7 @@
 module.exports = {
     extends: ['@commitlint/config-conventional'],
     rules: {
-        "type-enum": [2, 'always', [
+        'type-enum': [2, 'always', [
             'build',
             'chore',
             'ci',
@@ -14,13 +14,13 @@ module.exports = {
             'revert',
             'style',
             'test',
-            'merge'
+            'merge',
         ]],
     },
     prompt: {
         questions: {
             type: {
-                description: "选择您要提交的更改类型",
+                description: '选择您要提交的更改类型',
                 enum: {
                     feat: {
                         description: '一个新功能',
@@ -68,7 +68,7 @@ module.exports = {
                         emoji: '⚙️',
                     },
                     chore: {
-                        description: "构建过程或辅助工具的变动",
+                        description: '构建过程或辅助工具的变动',
                         title: 'Chores',
                         emoji: '♻️',
                     },
@@ -112,5 +112,5 @@ module.exports = {
                 description: '添加问题参考 (例如 "fix #123", "re #123".)',
             },
         },
-    }
+    },
 };
