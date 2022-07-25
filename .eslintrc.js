@@ -23,6 +23,8 @@ module.exports = {
         'airbnb-base',
         'plugin:@typescript-eslint/recommended',
         'plugin:vue/vue3-recommended',
+        'plugin:jsonc/recommended-with-jsonc',
+        'plugin:markdown/recommended',
         '.eslintrc-auto-import.json',
     ],
     parserOptions: {
