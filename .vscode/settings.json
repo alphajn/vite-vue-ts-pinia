@@ -10,6 +10,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
   },
+  "i18n-ally.sourceLanguage": "en-US",
+  "i18n-ally.displayLanguage": "zh-CN",
   "i18n-ally.localesPaths": [
     "src/lang"
   ]

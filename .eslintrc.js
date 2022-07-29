@@ -63,8 +63,8 @@ module.exports = {
             },
         ],
         'import/no-unresolved': [
-            2,
-            { ignore: ['.vue$', '^@/'] },
+            0,
+            // { ignore: ['.vue$', '^@/'] },
         ],
         // import 可以不用写后缀.js .vue
         'import/extensions': [

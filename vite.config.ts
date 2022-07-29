@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import AutoImport from 'unplugin-auto-import/vite'; // eslint-disable-line
-import VueComponents from 'unplugin-vue-components/vite'; // eslint-disable-line
+import AutoImport from 'unplugin-auto-import/vite';
+import VueComponents from 'unplugin-vue-components/vite';
 import * as path from 'path';
 
 // https://vitejs.dev/config/

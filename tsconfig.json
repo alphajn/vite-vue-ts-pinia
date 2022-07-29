@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "useDefineForClassFields": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
@@ -15,9 +15,10 @@
     "paths": { // 用于设置模块名到基于baseUrl的路径映射
       "@/*": ["src/*"],
       "@c/*": ["src/components/*"],
+      "@fe/utils/*": ["node_modules/@fe/utils/dist/*"],
     },
     "types": [
-      "vite/client"
+      "vite/client",
     ]
   },
   "include": [
