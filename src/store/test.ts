@@ -1,12 +1,22 @@
-export const useTestStore = defineStore('text', {
+// export const useTestStore = defineStore('text', {
+//     state: () => ({
+//         name: 'test-pinia',
+//         size: '10px',
+//     }),
+//     getters: {
+
+//     },
+//     actions: {
+
+//     },
+// });
+
+export const useUserStore = defineStore('user', {
     state: () => ({
-        name: 'test-pinia',
-        size: '10px',
+        userInfo: null as UserInfo | null,
     }),
+    actions: {},
     getters: {
-
-    },
-    actions: {
-
+        isLogin: (state: { userInfo: UserInfo; }) => !!state.userInfo,
     },
 });
