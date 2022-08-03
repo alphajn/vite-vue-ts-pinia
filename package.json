@@ -9,7 +9,7 @@
     "prepare": "husky install",
     "lint:es": "eslint --ext .js,.ts,.vue,.tsx --fix src",
     "lint:style": "stylelint **/*.\"{css,scss,vue}\" --fix",
-    "lint": "vue-tsc --noEmit & pnpm lint:es & pnpm lint:style"
+    "lint": "vue-tsc --noEmit && pnpm lint:es && pnpm lint:style"
   },
   "dependencies": {
     "axios": "^0.27.2",
