@@ -13,50 +13,48 @@
     flex-flow: column nowrap;
 }
 
-.flex {
-    // align-items 布局
-    @each $key in flex-start, flex-end, center, baseline, stretch {
-        // 交叉轴对齐方式单行文本
-        &-items-#{$key} {
-            align-items: #{$key};
-        }
-
-        // 单个属性对齐方式
-        &-self-#{$key} {
-            align-self: #{$key};
-        }
+@each $key in flex-start, flex-end, center, space-between, space-around {
+    .flex-row-#{$key},
+    .flex-col-#{$key} {
+        justify-content: #{$key};
     }
 
-    @each $key in flex-start, flex-end, center, space-between, space-around {
-        &-row-#{$key},
-        &-col-#{$key} {
-            justify-content: #{$key};
-        }
+    // 多根交叉轴的对齐方式，一根轴线不起作用
+    .content-#{$key} {
+        align-content: #{$key};
+    }
+}
 
-        // 多根交叉轴的对齐方式，一根轴线不起作用
-        &-content-#{$key} {
-            align-content: #{$key};
-        }
+// align-items 布局
+@each $key in flex-start, flex-end, center, baseline, stretch {
+    // 交叉轴对齐方式单行文本
+    .items-#{$key} {
+        align-items: #{$key};
     }
 
-    @each $key in nowrap, wrap, wrap-reverse {
-        &-#{$key} {
-            flex-wrap: #{$key};
-        }
+    // 单个属性对齐方式
+    .self-#{$key} {
+        align-self: #{$key};
     }
+}
 
-    &-1 {
-        flex: 1; // flex:<number> 1 0
+@each $key in nowrap, wrap, wrap-reverse {
+    .#{$key} {
+        flex-wrap: #{$key};
     }
+}
 
-    &-shrink-0 {
-        flex-shrink: 0;
-    }
+.flex1 {
+    flex: 1; // flex:<number> 1 0 // flex-grow flex-shrink flex-basis
+}
+
+.shrink0 {
+    flex-shrink: 0;
 }
 
 // vertical align
 @each $key in top, middle, bottom {
-    .vertical-align-#{$key} {
+    .align-#{$key} {
         vertical-align: #{$key};
     }
 }
@@ -68,16 +66,41 @@
     }
 }
 
-// text align
-@each $key in default, pointer, not-allowed {
+// 鼠标效果
+@each $key in default, pointer, not-allowed, progress {
     .cursor-#{$key} {
         cursor: #{$key};
     }
 }
 
+// 字体weight
+@each $key in normal, bold, 500 {
+    .weight-#{$key} {
+        font-weight: #{$key};
+    }
+}
+
+// 文字颜色和背景颜色
+@each $key in "main" {
+    .text-#{$key} {
+        color: var(--#{$key});
+    }
+
+    .bg-#{$key} {
+        background-color: var(--#{$key});
+    }
+}
+
+// border-radius
+@each $key in 4, 6, 8, 12 {
+    .radius#{$key} {
+        border-radius: #{$key}px;
+    }
+}
+
 // 超出多少行隐藏显示...
 @each $key in 1, 2, 3 {
-    .text-ellipsis-#{$key} {
+    .ellipsis#{$key} {
         display: -webkit-box; // stylelint-disable-line
         overflow: hidden;
         text-overflow: ellipsis;
@@ -86,13 +109,68 @@
     }
 }
 
-.font-bold {
-    font-weight: bold;
+// 常用间距
+@each $key in 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40 {
+    .m#{$key} {
+        margin: #{$key}px;
+    }
+
+    .mt#{$key} {
+        margin-top: #{$key}px;
+    }
+
+    .mr#{$key} {
+        margin-right: #{$key}px;
+    }
+
+    .mb#{$key} {
+        margin-bottom: #{$key}px;
+    }
+
+    .ml#{$key} {
+        margin-left: #{$key}px;
+    }
+
+    .p#{$key} {
+        padding: #{$key}px;
+    }
+
+    .pt#{$key} {
+        padding-top: #{$key}px;
+    }
+
+    .pr#{$key} {
+        padding-right: #{$key}px;
+    }
+
+    .pb#{$key} {
+        padding-bottom: #{$key}px;
+    }
+
+    .pl#{$key} {
+        padding-left: #{$key}px;
+    }
+
+    .fz#{$key} {
+        font-size: #{$key}px;
+    }
+
+    .lh#{$key} {
+        line-height: #{$key}px;
+    }
 }
 
 // 超出隐藏...
-.text-ellipsis {
+.ellipsis {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.break-word {
+    word-break: break-word;
 }

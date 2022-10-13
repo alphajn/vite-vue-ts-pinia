@@ -15,7 +15,7 @@ setTimeout(() => {
 </script>
 
 <template>
-    <section class="flex-col-center flex-items-center font-bold">
+    <section class="flex-col-center items-center weight-bold">
         {{ t('title') }}
         <p>{{ store.name }}</p>
         <p>{{ name }}</p>
