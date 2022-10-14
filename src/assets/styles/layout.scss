@@ -1,6 +1,6 @@
 /**
- * @file 常用通用样式 flex 布局
- * @date 2022-06-23
+ * @file 常用通用样式
+ * @date 2022-10-13
  */
 
 [class*="flex-row"] {
@@ -39,7 +39,7 @@
 }
 
 @each $key in nowrap, wrap, wrap-reverse {
-    .#{$key} {
+    .flex-#{$key} {
         flex-wrap: #{$key};
     }
 }
@@ -74,7 +74,7 @@
 }
 
 // 字体weight
-@each $key in normal, bold, 500 {
+@each $key in normal, bold, 400, 500, 600 {
     .weight-#{$key} {
         font-weight: #{$key};
     }
@@ -82,7 +82,7 @@
 
 // 文字颜色和背景颜色
 @each $key in "main" {
-    .text-#{$key} {
+    .color-#{$key} {
         color: var(--#{$key});
     }
 
@@ -167,8 +167,11 @@
     text-overflow: ellipsis;
 }
 
-.uppercase {
-    text-transform: uppercase;
+// 文字大小写
+@each $key in capitalize, uppercase, lowercase, none {
+    .text-#{$key} {
+        text-transform: #{$key};
+    }
 }
 
 .break-word {
