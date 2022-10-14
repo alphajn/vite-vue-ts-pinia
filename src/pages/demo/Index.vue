@@ -1,31 +1,44 @@
 <script setup lang="ts">
-import { useTestStore } from '@/store/test';
+import { toast } from '@/utils/toast';
 
-const { t } = useI18n();
-const store = useTestStore();
-const { size } = storeToRefs(store);
-const { name } = store;
-store.size = '20px';
-store.$reset();
-
-setTimeout(() => {
-    store.size = '100px';
-    store.name = 'update-name';
-}, 500);
+const state = reactive({
+    // toast列表
+    toast_list: [
+        {
+            type: 'info',
+            fn: 'info',
+        },
+        {
+            type: 'warning',
+            fn: 'warning',
+        },
+        {
+            type: 'success',
+            fn: 'success',
+        },
+        {
+            type: 'danger',
+            fn: 'error',
+        },
+    ],
+});
 </script>
 
 <template>
-    <section class="flex-col-center items-center weight-bold">
-        {{ t('title') }}
-        <p>{{ store.name }}</p>
-        <p>{{ name }}</p>
-        <p>{{ store.size }}</p>
-        <p>{{ size }}</p>
+    <section class="flex-col-center items-center p20">
+        <h2 class="mb10">
+            Toast-Demo
+        </h2>
+        <ul>
+            <el-button
+                v-for="item in state.toast_list"
+                :key="item.type"
+                :type="item.type"
+                class="text-capitalize"
+                @click="toast[item.fn](item.fn)"
+            >
+                {{ item.fn }}
+            </el-button>
+        </ul>
     </section>
 </template>
-
-<style lang="scss" scoped>
-section {
-    color: red;
-}
-</style>
