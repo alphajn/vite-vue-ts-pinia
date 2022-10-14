@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
 import VueComponents from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+
 import * as path from 'path';
 
 // https://vitejs.dev/config/
@@ -20,9 +22,11 @@ export default defineConfig({
                 enabled: true,
                 filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
             },
+            resolvers: [ElementPlusResolver()],
         }),
         VueComponents({
             directoryAsNamespace: true,
+            resolvers: [ElementPlusResolver()],
             // // 配置文件生成位置
             dts: 'src/components.d.ts',
         }),
