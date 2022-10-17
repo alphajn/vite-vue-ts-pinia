@@ -5,8 +5,6 @@
 
 import { ElMessage } from 'element-plus';
 import type { MessageParamsWithType, MessageHandler } from 'element-plus';
-import 'element-plus/theme-chalk/el-message.css';
-import 'element-plus/theme-chalk/el-badge.css';
 // import type { DefineComponent } from 'vue';
 
 export type Toast = {
