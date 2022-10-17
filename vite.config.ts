@@ -34,7 +34,7 @@ export default defineConfig({
         },
     },
     build: {
-        minify: 'terser',
+        // minify: 'terser', // lib下建议开启
     },
     css: {
         postcss: {
